@@ -17,34 +17,17 @@ public class TestBTree {
     
     StringByLength len;
     BTree BT0LG;
-    ArrayList<String> al1;
     BTree mt;    
     
     public void init() {
         StringByLength len = new StringByLength();
         mt = BTree.binTree(len);
         BT0LG = BTree.binTree(len);
-        al1 = new ArrayList<String>();
-        al1.add("Brendan");        
-        al1.add("Bob");
-        al1.add("Jose");
-        al1.add("Ev");
     }
 
     private void testBuild() {
         init();
-        assertTrue("testEmpty", BT0LG.equals(mt));
-        assertTrue("testBinTree", BT0LG.equals(BTree.binTree(len)));        
-        BT0LG.insert("Steve");
-        assertTrue("testInsert", BT0LG.data.equals("Steve"));
-        BT0LG.build(al1);
-        assertTrue("testBuild", BT0LG.left.data.equals("Bob"));
-        assertTrue("testBuild2", BT0LG.data.equals("Steve"));
-        assertTrue("testBuild3", BT0LG.right.data.equals("Brendan"));
-        assertTrue("testBuild4", BT0LG.left.right.data.equals("Jose"));
-        assertTrue("testBuild5", BT0LG.left.left.data.equals("Ev"));
         System.out.println(BT0LG.toString());
-        assertTrue("testHasNext", BT0LG.iterator().hasNext() == true);
     }
     
     ////////////////////////////////////////////////////////////////
